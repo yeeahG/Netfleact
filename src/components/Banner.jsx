@@ -20,8 +20,10 @@ const Banner = () => {
             const request = await axios.get(requests.fetchNetflixOriginals);
             //console.log(request);
 
-            const randomMovie = request.data.results[6];
-            setMoive(randomMovie);
+            const randomMovie = request.data.results[
+                Math.floor(Math.random() * request.data.results.length - 1)
+              ];
+              setMoive(randomMovie);
 
         }
 
